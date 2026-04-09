@@ -1,0 +1,991 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Namelevate Technologies | Digital Solutions</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+<!--==================================Loader starts=============================================-->
+    <div id="loader-wrapper">
+    <div class="loader-container">
+        <div class="loader-logo">
+            <img src="IMAGES/logo.png" alt="Namelevate Logo">
+        </div>
+
+        <div class="loader-text">
+            <span class="white">N</span><span class="white">a</span><span class="white">m</span><span class="white">e</span><span class="orange">l</span><span class="orange">e</span><span class="orange">v</span><span class="orange">a</span><span class="orange">t</span><span class="orange">e</span><span class="white">.</span><span class="white">.</span><span class="white">.</span>
+        </div>
+
+        <div class="loader-percentage" id="load-pc">0%</div>
+        <div class="loader-bar-bg">
+            <div class="loader-bar-fill" id="bar-fill"></div>
+        </div>
+    </div>
+</div>
+<!--========================================Loader ends============================================-->
+<nav class="navbar">
+    <div class="nav-container">
+        <a href="#home" class="logo-link">
+            <div class="logo-group">
+                <img src="IMAGES/logo.png" alt="Logo" class="nav-logo"> <span class="brand-name">Name<span class="orange-text">levate</span> Technologies</span>
+            </div>
+        </a>
+
+        <div class="menu-toggle" id="mobile-menu">
+            <img src="IMAGES/hamb.png" alt="hamburger" class="hamburger-icon">
+        </div>
+
+        <ul class="nav-menu">
+            <div class="close-menu" id="close-btn">
+                <img src="IMAGES/xcross.webp" alt="cross" class="cross-icon">
+            </div>
+            <li><a href="#home" class="nav-links">Home</a></li>
+            <li><a href="#services" class="nav-links">Services</a></li>
+            <li><a href="#portfolio" class="nav-links">Portfolio</a></li>
+            <li><a href="#pricing" class="nav-links">Pricing</a></li>
+            <li><a href="#contact" class="nav-links">Contact</a></li>
+            <li><a href="#contact" class="nav-btn">Get a Website Today</a></li>
+        </ul>
+    </div>
+</nav>
+
+<section class="hero" id="home">
+    <div class="hero-overlay">
+        <div class="hero-content">
+            <h1>Elevate Your Online Presence Today</h1>
+            <h2 class="typewriter-container">
+                No matter how good your <span id="typewriter" class="orange-text"></span><span class="cursor">|</span> is, if people don't know about you, you make no impact.
+            </h2>
+            <p class="hero-description">
+                We help NGOs, churches, schools, and businesses build professional websites that make them easy to find, trust, and engage with.
+            </p>
+            <div class="hero-btns">
+                <button class="btn-primary" onclick="openModal('website')">Get Your Website</button>
+                <button class="btn-secondary" onclick="openModal('demo')">Request a Free Demo</button>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div id="contactModal" class="modal">
+    <div class="modal-content">
+        <span class="close-modal" onclick="closeModal()">&times;</span>
+        <h3 id="modalTitle">Let's Build Your Future</h3>
+        <form action="mail.php" method="POST" class="contact-form">
+            <input type="hidden" name="form_type" id="form_type">
+            <div class="input-group">
+                <input type="text" name="name" placeholder="Full Name" required>
+                <input type="email" name="email" placeholder="Email Address" required>
+            </div>
+            <input type="tel" name="phone" placeholder="Phone Number (+256...)" required>
+            <textarea name="message" id="modalMessage" rows="4" readonly></textarea>
+            <button type="submit" class="submit-btn" id="submitBtn">
+            <span id="btnText">Send Message</span>
+            <span id="btnSpinner" class="spinner" style="display: none;"></span>
+            </button>
+        </form>
+    </div>
+</div>  
+ 
+<!--=======================================Hero Section Ends========================================-->
+<!--=======================================Problem section starts========================================-->
+
+<section class="inadequacies" id="why-us">
+    <div class="container">
+        <div class="section-header">
+            <h2 class="section-title">Many Great Organizations are <span class="orange-text">Invisible</span> Online</h2>
+            <p class="section-subtitle">You do incredible work on the ground, but your digital silence is costing you growth. If they can't find you, they can't trust you.</p>
+        </div>
+
+        <div class="pain-points-grid">
+            <div class="pain-card main-card">
+                <img src="IMAGES/eye.png" alt="The Cost of Being Unseen" class="pain-card-img">
+                <h3>The Cost of Being Unseen</h3>
+                <ul>
+                    <li>People hear about you but can’t find you.</li>
+                    <li>Important updates don't reach everyone.</li>
+                    <li>New visitors don't know what you offer.</li>
+                    <li>You rely 100% on word of mouth.</li>
+                </ul>
+                <p class="impact-text">This limits your growth and impact every single day.</p>
+            </div>
+
+                <div class="sector-tabs">
+                    <div class="sector-item" onmouseover="showDetail('ngo')">
+                        <img src="IMAGES/NGO.jpg" alt="NGO" class="sector-icon">
+                        <span>NGOs</span>
+                    </div>
+                    
+                    <div class="sector-item" onmouseover="showDetail('school')">
+                        <img src="IMAGES/school.webp" alt="School" class="sector-icon">
+                        <span>Schools</span>
+                    </div>
+                    
+                    <div class="sector-item" onmouseover="showDetail('church')">
+                        <img src="IMAGES/church.webp" alt="Church" class="sector-icon">
+                        <span>Churches</span>
+                    </div>
+                    
+                    <div class="sector-item" onmouseover="showDetail('business')">
+                        <img src="IMAGES/business.png" alt="Business" class="sector-icon">
+                        <span>Businesses</span>
+                    </div>
+                    
+                    <div class="sector-item" onmouseover="showDetail('clinic')">
+                        <img src="IMAGES/clinic.png" alt="Clinic" class="sector-icon">
+                        <span>Clinics</span>
+                    </div>
+                </div>
+
+            <div class="detail-box" id="detail-box">
+                <h4 id="detail-title">Select your sector above</h4>
+                <p id="detail-desc">Hover over your industry to see how invisibility is affecting your specific mission.</p>
+            </div>
+        </div>
+    </div>
+</section>
+<!--=======================================Problem section ends========================================-->
+
+<!--===================================Solutions Section===================================-->
+<section class="solutions">
+    <div class="container">
+        <div class="solutions-content">
+            <div class="solutions-text">
+                <span class="badge">The Cure</span>
+                <h2>A Website <span class="orange-text">Solves</span> This</h2>
+                <p>A website is your organization's home online. It’s a tireless worker that stays awake while you rest.</p>
+                <div class="status-indicator">
+                    <span class="dot"></span> 24/7 Active Growth
+                </div>
+            </div>
+
+            <div class="solutions-grid">
+                <div class="solution-card">
+                    <div class="icon-box">
+                        <img src="IMAGES/findability.png" alt="Find You Easily" class="solution-card-img">
+                    </div>
+                    <h4>Find You Easily</h4>
+                    <p>No more "Where are you located?" Appear on Google maps and search results instantly.</p>
+                </div>
+
+                <div class="solution-card">
+                    <div class="icon-box">
+                        <img src="IMAGES/arrow.jpg" alt="Accurately See Your Impact" class="solution-card-img">
+                    </div>
+                    <h4>Accurately See Your Impact</h4>
+                    <p>Showcase your projects and success stories with high-quality galleries and data.</p>
+                </div>
+
+                <div class="solution-card">
+                    <div class="icon-box">
+                        <img src="IMAGES/info.png" alt="Learn About You" class="solution-card-img">
+                    </div>
+                    <h4>Learn About You</h4>
+                    <p>Provide a comprehensive "About Us" section that builds deep trust with new visitors.</p>
+                </div>
+
+                <div class="solution-card">
+                    <div class="icon-box">
+                        <img src="IMAGES/bell.png" alt="Stay Updated" class="solution-card-img">
+                    </div>
+                    <h4>Stay Updated</h4>
+                    <p>Share news, events, and announcements directly with your community in real-time.</p>
+                </div>
+
+                <div class="solution-card">
+                    <div class="icon-box">
+                        <img src="IMAGES/connect.png" alt="Connect Anytime" class="solution-card-img">
+                    </div>
+                    <h4>Connect Anytime</h4>
+                    <p>Integrated contact forms and WhatsApp links let them reach you even at midnight.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!--=====================================Solution ends============================================-->
+<!--=====================================What we do Section============================================-->
+
+<section class="what-we-do" id="services">
+    <div class="container">
+        <div class="wwd-wrapper">
+            <div class="wwd-text" >
+                <span class="badge">Our Mission</span>
+                <h2>What We Do at <br><span class="orange-text">Namelevate Technologies</span></h2>
+                <p class="wwd-description">
+                    We design and build modern, easy-to-use websites that help any
+                    <span class="dynamic-box">
+                        <span id="typewriter2" class="orange-text"></span><span class="cursor2">|</span>
+                    </span> 
+                    communicate better, reach more people, and grow their impact.
+                </p>
+                <div class="wwd-cta">
+                    <button class="btn-primary" onclick="openModal('website')">Start Your Project</button>
+                </div>
+            </div>
+
+            <div class="wwd-services">
+                <div class="service-item">
+                    <div class="service-number">01</div>
+                    <div class="service-info">
+                        <h4>Website Design</h4>
+                        <p>Beautiful, professional layouts tailored to your unique brand identity.</p>
+                    </div>
+                </div>
+                <div class="service-item">
+                    <div class="service-number">02</div>
+                    <div class="service-info">
+                        <h4>Content Setup</h4>
+                        <p>We organize your photos, stories, and information for maximum clarity.</p>
+                    </div>
+                </div>
+                <div class="service-item">
+                    <div class="service-number">03</div>
+                    <div class="service-info">
+                        <h4>Search Engine Optimization</h4>
+                        <p>We increase your "findability" so people searching on Google find you first.</p>
+                    </div>
+                </div>
+                <div class="service-item">
+                    <div class="service-number">04</div>
+                    <div class="service-info">
+                        <h4>Mobile-Friendly Systems</h4>
+                        <p>Your site will look and work perfectly on every smartphone, tablet, laptop, and desktop.</p>
+                    </div>
+                </div>
+                <div class="service-item">
+                    <div class="service-number">05</div>
+                    <div class="service-info">
+                        <h4>Easy Update Systems</h4>
+                        <p>We build systems that allow you to update your own news and events easily.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!--=========================================What we do============================================-->
+<!--=========================================How it works============================================-->
+<section class="how-it-works" id="process">
+    <div class="container">
+        <div class="hiw-wrapper">
+            
+            <div class="hiw-text">
+                <span class="badge">The Process</span>
+                <h2><span class="orange-text">Simple</span> Steps to Your New Site</h2>
+                <p class="hiw-description">Zero technical knowledge needed from your side. We manage the complexity; you manage the results.</p>
+                
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-dot">
+                            <img style="height: 65px;" src="IMAGES/handshake2.PNG" alt="Understand" class="timeline-img">
+                        </div>
+                        <div class="timeline-content">
+                            <h4>1. Understand Your Needs</h4>
+                            <p>We clarify your goals, your audience, and your unique mission.</p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item active">
+                        <div class="timeline-dot">
+                            <img src="IMAGES/build1.png" alt="Design" class="timeline-img">
+                        </div>
+                        <div class="timeline-content">
+                            <h4>2. Design Your Website</h4>
+                            <p>We create a beautiful, professional mockup of your new digital presence.</p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item active">
+                        <div class="timeline-dot">
+                            <img src="IMAGES/refine.webp" alt="Build" class="timeline-img">
+                        </div>
+                        <div class="timeline-content">
+                            <h4>3. Build and Refine it</h4>
+                            <p>Our experts pay attention to detail while refining your functional site.</p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item approve">
+                        <div class="timeline-dot">
+                            <img src="IMAGES/approve.webp" alt="Approve" class="timeline-img">
+                        </div>
+                        <div class="timeline-content">
+                            <h4>4. You Review and Approve</h4>
+                            <p>This is your part! You give feedback until it's perfectly aligned.</p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item active">
+                        <div class="timeline-dot">
+                            <img src="IMAGES/launch.webp" alt="Launch" class="timeline-img">
+                        </div>
+                        <div class="timeline-content">
+                            <h4>5. We Launch and Train You</h4>
+                            <p>We go live, and then teach you how to make your own easy updates.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="hiw-graphics">
+                <div class="kinetic-container">
+                    <img src="IMAGES/global2.avif" alt="Process Main Image" class="main-graphic">
+                    
+                    <div class="floating-photos">
+                        <div class="floater float-top">
+                            <img src="IMAGES/globe2.webp" alt="Go Global" class="floater-img">
+                            <span>Go Global</span>
+                        </div>
+                        <div class="floater float-bottom">
+                            <img src="IMAGES/bull.png" alt="Get Known" class="floater-img">
+                            <span>Get Known</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+<!--=========================================How it works ends============================================-->
+<!--=========================================Portfolio Section============================================-->
+
+<section class="portfolio" id="portfolio">
+    <div class="container">
+        <div class="section-header">
+            <span class="badge">Success Stories</span>
+            <h1>Our <span class="orange-text">Latest</span> Projects</h1>
+            <p style="font-size: 1.2rem;">We don't just build websites; we build digital homes for missions that matter.</p>
+        </div>
+
+        <div class="portfolio-grid">
+            <div class="portfolio-card">
+                <div class="image-mosaic">
+                    <img src="IMAGES/sho1.png" alt="SHO Home" class="m-1 m-round">
+                    <img src="IMAGES/sho2.png" alt="SHO Mobile" class="m-2 m-angled">
+                    <img src="IMAGES/sho3.png" alt="SHO Impact" class="m-3 m-square">
+                    <img src="IMAGES/sho4.png" alt="SHO Contact" class="m-4 m-diamond">
+                </div>
+                <div class="portfolio-info">
+                    <h3>Somali Humanitarian Organization (SHO)</h3>
+                    <p>A global NGO based in Somalia & USA where 85% of funds go to projects. We showcased their global impact through 5+ custom-designed modules.</p>
+                    <a href="https://www.sho.ngo" target="_blank" class="project-link">Visit Website <i class="fas fa-external-link-alt"></i></a>
+                </div>
+            </div>
+
+            <div class="portfolio-card">
+                <div class="image-mosaic">
+                    <img src="IMAGES/therapy1.png" alt="Therapy Home" class="m-1 m-round">
+                    <img src="IMAGES/therapy2.png" alt="Therapy Session" class="m-2 m-angled">
+                    <img src="IMAGES/therapy3.png" alt="Therapy Team" class="m-3 m-square">
+                    <img src="IMAGES/therapy4.png" alt="Therapy Blog" class="m-4 m-diamond">
+                </div>
+                <div class="portfolio-info">
+                    <h3>Heal Your Mind Therapy</h3>
+                    <p>A serene portal for mental health. We utilized soft aesthetics and a 4-part visual strategy to ensure patients feel safe and guided.</p>
+                    <a href="https://www.healyourmindtherapy.net" target="_blank" class="project-link">Visit Website <i class="fas fa-external-link-alt"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!--=========================================Portfolio ends============================================-->
+<!--=========================================Pricing Section============================================-->
+<section class="packages" id="pricing">
+    <div class="container">
+
+        <div class="section-header center">
+            <span class="badge">Pricing Plans</span>
+            <h1>Investment <span class="orange-text">Packages</span></h1>
+            <p style="font-size: 1.2rem;">Select a digital foundation built with clinical precision for your mission.</p>
+        </div>
+
+        <div class="pricing-grid" style="padding-left: 10px;">
+            <div class="price-card">
+                <div class="price-header">
+                    <span class="p-title">🥈 Silver</span>
+                    <div class="p-amount">$216</div>
+                    <div class="tapered-line"></div>
+                    <p class="p-summary" style="font-weight: 700; font-size: 1.1rem;">A clean, professional presence for smaller teams.</p>
+                </div>
+                <ul class="p-features" style="font-size: 1.1rem;">
+                    <li><i class="fas fa-check"></i> 4–5 Custom Pages</li>
+                    <li><i class="fas fa-check"></i> Photo Gallery</li>
+                    <li><i class="fas fa-check"></i> Mobile-Friendly Design</li>
+                    <li><i class="fas fa-check"></i> Professional Contact Info</li>
+                    <li><i class="fas fa-check"></i> Basic SEO Setup</li>
+                </ul>
+                <button onclick="openPackageModal('Silver Package ($216)')" class="p-btn">Get Package 1</button>
+            </div>
+
+            <div class="price-card featured">
+                <div class="popular-tag">MOST POPULAR</div>
+                <div class="price-header">
+                    <span class="p-title">🥇 Gold (Recommended)</span>
+                    <div class="p-amount">$416</div>
+                    <div class="tapered-line"></div>
+                    <p class="p-summary" style="font-weight: 700; font-size: 1.1rem;">Dynamic control to update news, sermons and events regularly.</p>
+                </div>
+                <ul class="p-features" style="font-size: 1.1rem;">
+                    <li><i class="fas fa-check"></i> <strong>Everything in Silver</strong></li>
+                    <li><i class="fas fa-check"></i> Donation & Payment Page</li>
+                    <li><i class="fas fa-check"></i> News / Events / Sermons Portal</li>
+                    <li><i class="fas fa-check"></i> Google maps integration</li>
+                    <li><i class="fas fa-check"></i> Unlimited Updates System</li>
+                    <li><i class="fas fa-check"></i> Advanced Google Search Ranking</li>
+                </ul>
+                <button onclick="openPackageModal('Gold Package ($416)')" class="p-btn featured-btn">Get Package 2</button>
+            </div>
+
+            <div class="price-card">
+                <div class="price-header">
+                    <span class="p-title">💎 Diamond</span>
+                    <div class="p-amount">$1,250</div>
+                    <div class="tapered-line"></div>
+                    <p class="p-summary" style="font-weight: 700; font-size: 1.1rem;">A complete digital ecosystem for large organizations.</p>
+                </div>
+                <ul class="p-features" style="font-size: 1.1rem;">
+                    <li><i class="fas fa-check"></i> <strong>Everything in Gold</strong></li>
+                    <li><i class="fas fa-check"></i> Private Member/Staff Portal</li>
+                    <li><i class="fas fa-check"></i> Integrated Live Streaming</li>
+                    <li><i class="fas fa-check"></i> 24/7 Priority Support</li>
+                </ul>
+                <button onclick="openPackageModal('Diamond Package ($1250)')" class="p-btn">Get Package 3</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="pricing-custom-note">
+        <p>Need a customized package? <a href="#contact" class="custom-link">Let's discuss your unique preferences</a></p>
+    </div>
+
+    <div id="packageModal" class="pkg-modal">
+        <div class="pkg-modal-content">
+            <span class="pkg-close" onclick="closePackageModal()">&times;</span>
+            <h3>Secure Your <span id="displayPackageName" class="orange-text"></span></h3>
+            <p>Our team will review your details to begin the precision setup.</p>
+            
+            <form action="mail.php" method="POST" class="pkg-form">
+                <input type="hidden" name="package" id="hiddenPackageInput">
+                
+                <div class="form-group">
+                    <label>Full Name</label>
+                    <input type="text" name="fullname" placeholder="Enter your name" required>
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Email</label>
+                        <input type="email" name="email" placeholder="email@example.com" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Contact Number</label>
+                        <input type="tel" name="phone" placeholder="+256..." required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>Organization Type</label>
+                    <select name="org_type" required>
+                        <option value="NGO">NGO</option>
+                        <option value="Church">Church</option>
+                        <option value="Business">Business</option>
+                        <option value="School">School</option>
+                        <option value="Personal">Personal</option>
+                    </select>
+                </div>
+
+                <button type="submit" class="submit-btn">Confirm Package Selection</button>
+            </form>
+        </div>
+    </div>
+</section>
+<!--==========================================Pricing ends==================================================-->
+<!--============================================Advanced features==================================================-->
+<section class="advanced-solutions" id="advanced-tech">
+    <div class="container">
+        <div class="section-header center reveal-bottom">
+            <span class="badge">Next-Gen Tech</span>
+            <h1>Our Advanced <span class="orange-text">Digital Solutions</span></h1>
+            <p class="section-subtitle">
+                Surgical precision for complex operations. We build secure, scalable enterprise systems tailored to your mission.
+            </p>
+        </div>
+
+        <div class="scroll-hint">Scroll Right <i class="fas fa-chevron-right"></i></div>
+            <div class="solutions-grid2 reveal-bottom"> 
+        </div>
+
+        <div class="solutions-grid2 reveal-bottom">
+            
+            <div class="solution-card2">
+                <div class="sol-image-wrapper">
+                    <img src="IMAGES/custom.png" alt="Systems" class="sol-icon">
+                </div>
+                <h3>Custom Business Systems</h3>
+                <p>Tailored platforms to simplify daily operations and manage records effortlessly.</p>
+                <button class="sol-more-btn" onclick="openSolModal('custom-sys')">Learn More <i class="fas fa-arrow-right"></i></button>
+            </div>
+
+            <div class="solution-card2">
+                <div class="sol-image-wrapper">
+                    <img src="IMAGES/app.webp" alt="Mobile" class="sol-icon">
+                </div>
+                <h3>Mobile Apps</h3>
+                <p>Native Android & iOS apps to connect directly with your audience on their phones.</p>
+                <button class="sol-more-btn" onclick="openSolModal('mobile-apps')">Learn More <i class="fas fa-arrow-right"></i></button>
+            </div>
+
+            <div class="solution-card2">
+                <div class="sol-image-wrapper">
+                    <img src="IMAGES/web.webp" alt="Web Portals" class="sol-icon">
+                </div>
+                <h3>Advanced Web Portals</h3>
+                <p>Secure platforms that perform tasks, automate forms, and handle user logins.</p>
+                <button class="sol-more-btn" onclick="openSolModal('web-portals')">Learn More <i class="fas fa-arrow-right"></i></button>
+            </div>
+
+            <div class="solution-card2">
+                <div class="sol-image-wrapper">
+                    <img src="IMAGES/pay.jpg" alt="Payments" class="sol-icon">
+                </div>
+                <h3>Online Payment & Booking</h3>
+                <p>Accept payments 24/7 and automate your appointments with zero manual effort.</p>
+                <button class="sol-more-btn" onclick="openSolModal('payments')">Learn More <i class="fas fa-arrow-right"></i></button>
+            </div>
+
+            <div class="solution-card2">
+                <div class="sol-image-wrapper">
+                    <img src="IMAGES/data.jpg" alt="Data" class="sol-icon">
+                </div>
+                <h3>Data & Reporting Systems</h3>
+                <p>Organize your data and generate instant reports to make better business decisions.</p>
+                <button class="sol-more-btn" onclick="openSolModal('data-reporting')">Learn More <i class="fas fa-arrow-right"></i></button>
+            </div>
+
+            <div class="solution-card2">
+                <div class="sol-image-wrapper">
+                    <img src="IMAGES/login.jpg" alt="Secure" class="sol-icon">
+                </div>
+                <h3>Secure Login & User Portals</h3>
+                <p>Personalized dashboards for staff or clients with encrypted, secure access.</p>
+                <button class="sol-more-btn" onclick="openSolModal('secure-portals')">Learn More <i class="fas fa-arrow-right"></i></button>
+            </div>
+
+            <div class="solution-card2">
+                <div class="sol-image-wrapper">
+                    <img src="IMAGES/auto.jpg" alt="Automation" class="sol-icon">
+                </div>
+                <h3>Automation & Workflows</h3>
+                <p>Automate repetitive tasks like emails and registrations to save hours of work.</p>
+                <button class="sol-more-btn" onclick="openSolModal('automation')">Learn More <i class="fas fa-arrow-right"></i></button>
+            </div>
+
+            <div class="solution-card2">
+                <div class="sol-image-wrapper">
+                    <img src="IMAGES/commerce.webp" alt="E-commerce" class="sol-icon">
+                </div>
+                <h3>E-commerce Stores</h3>
+                <p>Sell your products or services globally with a fully integrated online store.</p>
+                <button class="sol-more-btn" onclick="openSolModal('ecommerce')">Learn More <i class="fas fa-arrow-right"></i></button>
+            </div>
+
+            <div class="solution-card2">
+                <div class="sol-image-wrapper">
+                    <img src="IMAGES/integrate.webp" alt="Integration" class="sol-icon">
+                </div>
+                <h3>System Integration</h3>
+                <p>Connect your website, payments, and communication into one unified system.</p>
+                <button class="sol-more-btn" onclick="openSolModal('integration')">Learn More <i class="fas fa-arrow-right"></i></button>
+            </div>
+
+            <div class="solution-card2">
+                <div class="sol-image-wrapper">
+                    <img src="IMAGES/cloud.jpg" alt="Cloud" class="sol-icon">
+                </div>
+                <h3>Cloud-Based Solutions</h3>
+                <p>Access your systems securely from anywhere in the world without physical servers.</p>
+                <button class="sol-more-btn" onclick="openSolModal('cloud')">Learn More <i class="fas fa-arrow-right"></i></button>
+            </div>
+
+        </div>
+
+        <div class="advanced-cta reveal-bottom">
+            <h3>Interested in our advanced services? <span class="orange-text">Book a call with our software engineers.</span></h3>
+            <a href="#contact" class="submit-btn2" style=" display:inline-block; width:auto; padding: 15px 40px;">
+                Book a Call <i class="fas fa-phone-alt"></i>
+            </a>
+        </div>
+    </div>
+
+    <div id="solDetailModal" class="pkg-modal" style="display:none;">
+        <div class="pkg-modal-content">
+            <span class="pkg-close" onclick="closeSolModal()">&times;</span>
+            <div id="solModalDynamicContent">
+                </div>
+        </div>
+    </div>
+</section>
+<!--==========================================Advanced features end==================================================-->
+<!--==========================================Advantage Section============================================-->
+
+<section class="why-choose-us" id="about">
+    <div class="container">
+        <div class="section-header center">
+            <span class="badge">The Namelevate Advantage</span>
+            <h2>Why Organizations & Institutions Trust <span class="orange-text">Namelevate</span></h2>
+            <p style="font-size: 1.2rem;">We combine technical excellence with a deep understanding of the African organizational landscape.</p>
+        </div>
+
+            <div class="advantage-grid">
+                <div class="advantage-card">
+                    <div class="adv-icon">
+                        <img src="IMAGES/globe.webp" alt="Local Context" class="adv-card-img">
+                    </div>
+                    <h3 style="color: white;">Local Context</h3>
+                    <p style="color: white;">We understand the unique challenges of African NGOs, schools, and clinics. We build for local impact with global standards.</p>
+                </div>
+
+                <div class="advantage-card">
+                    <div class="adv-icon">
+                        <img src="IMAGES/feather.webp" alt="Radical Simplicity" class="adv-card-img">
+                    </div>
+                    <h3 style="color: white;">Radical Simplicity</h3>
+                    <p style="color: white;">Complexity is the enemy of progress. We focus on clean designs and clear messaging that your audience can actually use.</p>
+                </div>
+
+                <div class="advantage-card">
+                    <div class="adv-icon">
+                        <img src="IMAGES/self.png" alt="Self-Managed" class="adv-card-img">
+                    </div>
+                    <h3 style="color: white;">Self-Managed Systems</h3>
+                    <p style="color: white;">You shouldn't need a developer for every tiny update. We build intuitive dashboards so you stay in total control.</p>
+                </div>
+
+                <div class="advantage-card">
+                    <div class="adv-icon">
+                        <img src="IMAGES/supreme.png" alt="Search Supremacy" class="adv-card-img">
+                    </div>
+                    <h3 style="color: white;">Search Supremacy</h3>
+                    <p style="color: white;">A website is useless if no one finds it. We optimize every page to ensure you climb to the top of Google search rankings.</p>
+                </div>
+
+                <div class="advantage-card">
+                    <div class="adv-icon">
+                        <img src="IMAGES/handshake.webp" alt="Strategic Guidance" class="adv-card-img">
+                    </div>
+                    <h3 style="color: white;">Strategic Guidance</h3>
+                    <p style="color: white;">We don't just deliver a file and disappear. As your digital partners, we guide your branding and growth strategy long-term.</p>
+                </div>
+
+                <div class="advantage-card">
+                    <div class="adv-icon">
+                        <img src="IMAGES/mission2.webp" alt="Mission-Driven" class="adv-card-img">
+                    </div>
+                    <h3 style="color: white;">Mission-Driven</h3>
+                    <p style="color: white;">With projects like SHO achieving 85% funding efficiency, we prioritize your mission's success over our profit.</p>
+                </div>
+            </div>
+    </div>
+</section>
+<!--===========================================Advantage Section End============================================-->
+<!--===========================================Founder Section============================================-->
+<section class="founder-section" id="founder">
+    <div class="container">
+        <div class="founder-grid">
+            
+            <div class="founder-image-area">
+                <img src="IMAGES/Ottoo.JPG" alt="Ottoo Marvin - Founder & CEO" class="profile-img">
+                <div class="image-accent-border"></div>
+                <div class="credential-badge">
+                    <img src="IMAGES/microscope.jpg" alt="Mission-Driven" class="adv-card-img">
+                    <span>Data + Diagnosis</span>
+                </div>
+            </div>
+
+            <div class="founder-text-area">
+                <div class="section-header left">
+                    <span class="badge">Our Founder & CEO</span>
+                    <h2>Meet <span class="orange-text">Ottoo Marvin</span></h2>
+                </div>
+                
+                <h4 class="founder-title">Computer Programmer | 5th Year Medical Student (KIU - Uganda)</h4>
+                
+                <div class="founder-story"  style="padding-bottom: 30px;">
+                    <p class="story-highlight">"I don't just 'build websites.' I diagnose digital invisibility and prescribe precise technology that accelerates your mission."</p>
+                    
+                    <p>Ottoo Marvin is a rare hybrid professional, fusing deep algorithmic knowledge with clinical diagnostic precision. This unique duality defines the mission of Namelevate Technologies.</p>
+
+                    <p>Currently completing his 5th year of medical school at Kampala International University, Uganda, he understands the intricate systems that drive impactful organizations - from national clinics, schools, churches & businesses to transnational NGOs like SHO.</p>
+                    <p>But Ottoo doesn't work alone. At <strong>Namelevate Technologies</strong>, he leads a hand-picked collective of elite software engineers, content creators and a media team who work together to build high-performance infrastructure for organizations & businesses that serve humanity. 
+                    </p>
+                </div>
+                
+                <a href="https://wa.me/256772260710?text=Hello%20Ottoo,%20I%20want%20to%20partner%20with%20Namelevate%20for%20a%20Project" class="btn-primary" style="margin-top:30px;">Partner with precision</a>
+            </div>
+
+        </div>
+    </div>
+</section>
+<!--============================================Founder Section End============================================-->
+<!--============================================Contact Section============================================-->
+<section class="contact-section">
+    <div class="container">
+        <div class="contact-header" style="text-align: center;">
+            <span class="badge">Contact Us</span>
+                    <h2 style="align-items: center; font-size: 2.5rem;">Let's <span class="orange-text">Elevate</span> Your Online Presence</h2>
+                    <p style="align-items: center; font-size: 1.3rem;">Ready to get started? Reach out and let's build something impactful together.</p>
+                </div>
+        <div class="contact-grid">
+            
+            <div class="contact-info-side" style="padding-left: 15px; padding-top: 20px;">
+                <div class="founder-mini-profile" >
+                    <img style="height: 220px; width: 220px;" src="IMAGES/contact2.webp" alt="Invitation image" class="contact-round-img">
+                </div>
+                
+
+                <div class="contact-methods">
+                    <div class="method-item">
+                        <div class="method-icon-placeholder">
+                            <img src="IMAGES/phone.webp" alt="Call or Text" class="adv-card-img">
+                        </div>
+                        <div class="method-text">
+                            <span>Call or Text</span>
+                            <strong>+256 772 260 710</strong>
+                        </div>
+                    </div>
+
+                    <div class="method-item">
+                        <div class="method-icon-placeholder">
+                            <img src="IMAGES/whatsapp.png" alt="WhatsApp" class="adv-card-img">
+                        </div>
+                        <div class="method-text">
+                            <span>WhatsApp</span>
+                            <strong>+256 772 260 710</strong>
+                        </div>
+                    </div>
+
+                    <div class="method-item">
+                        <div class="method-icon-placeholder">
+                            <img src="IMAGES/mail.png" alt="email" class="adv-card-img">
+                        </div>
+                        <div class="method-text" id="form">
+                            <span>Official Email</span>
+                            <strong>namelevate@gmail.com</strong>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+                <div class="contact-form-side" id="contact">
+
+                    <form id="mainContactForm" action="mail.php" method="POST" class="elevate-form">
+                        <div class="form-group">
+                            <label>Full Name</label>
+                            <input type="text" name="fullname" placeholder="Enter your name" required>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>Email Address</label>
+                                <input type="email" name="email" placeholder="email@example.com" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Phone Contact</label>
+                                <input type="tel" name="phone" placeholder="+256..." required>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>Organization Type</label>
+                                <select name="org_type" required>
+                                    <option value="" disabled selected>Select Type</option>
+                                    <option value="NGO">NGO / Humanitarian</option>
+                                    <option value="Church">Church / Religious</option>
+                                    <option value="Business">Private Business</option>
+                                    <option value="School">School / Institution</option>
+                                    <option value="Personal">Personal Brand</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label>Interested Package</label>
+                                <select name="package" id="contactPackageSelect">
+                                    <option value="None">Just an Inquiry</option>
+                                    <option value="Silver">Silver Package ($216)</option>
+                                    <option value="Gold">Recommended Gold ($416)</option>
+                                    <option value="Diamond">Diamond Package ($1250)</option>
+                                    <option value="Custom">Custom Quote</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Your Message / Project Vision</label>
+                            <textarea name="message" rows="4" placeholder="Talk to us about your project..." required></textarea>
+                        </div>
+
+                        <button type="submit" class="submit-btn">
+                            Start My Transformation <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </form>
+                </div>
+
+        </div>
+    </div>
+</section>
+<!--=============================================Contact Section End=============================================-->
+
+<!--====================================================Test==================================================-->
+<section class="robot-walk-section">
+    <div class="hero-bg-overlay"></div>
+    
+    <div class="walker-container">
+        <div class="walking-circle"></div>
+        
+        <div class="robot-wrapper">
+            <img src="IMAGES/logo31.PNG" alt="Walking Robot" class="walking-robot">
+        </div>
+    </div>
+
+    <div class="section-content">
+        <h2>Engineering the <span class="orange-text">Future</span></h2>
+        <p>Progress is a continuous cycle of precision and movement.</p>
+    </div>
+</section>
+<!--==================================================Test end====================================================-->
+
+
+<!---------------------------------------------FAq Section--------------------------------------------->
+<section class="faq-section" id="faq">
+    <div class="container">
+        <div class="section-header center">
+            <span class="badge">Common Inquiries</span>
+            <h2>Frequently Asked <span class="orange-text">Questions</span></h2>
+            <p>Clear answers for organizations ready to scale their digital impact.</p>
+        </div>
+
+        <div class="faq-accordion">
+            <div class="faq-item">
+                <button class="faq-question">How long will it take to build my website? <i class="fas fa-plus"></i></button>
+                <div class="faq-answer">
+                    <p>Development typically takes <strong>1–3 weeks</strong>. The timeline depends on the complexity of your package and how quickly your organization provides the necessary content (logos, text, and photos).</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question">I already have a website. Can you help me improve it? <i class="fas fa-plus"></i></button>
+                <div class="faq-answer">
+                    <p>Yes, we offer website enhancement services to help you optimize your existing site for better performance and user experience. We also rebuild older websites to ensure they meet current standards.</p>
+                </div>
+            </div>
+
+
+            <div class="faq-item">
+                <button class="faq-question">What are the yearly renewal costs? <i class="fas fa-plus"></i></button>
+                <div class="faq-answer">
+                    <p>After the first year, the total cost for high-speed hosting, your domain name (.org, .com, etc.), and basic maintenance is <strong>$100 per year</strong>. We keep this fee flat and transparent with no hidden charges.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question">I already do regular social media marketing. Do I still need a website? <i class="fas fa-plus"></i></button>
+                <div class="faq-answer">
+                    <p>Yes, social media marketing only shows 8% of what you offer. Its role is to drive curiosity and direct traffic to your website, where you can provide more detailed information about your organization/ business and products. Every social media post should have your website link like "www.yourbusiness.com"</p>
+                </div>
+            </div>
+
+
+            <div class="faq-item">
+                <button class="faq-question">Do we need technical knowledge to manage the site? <i class="fas fa-plus"></i></button>
+                <div class="faq-answer">
+                    <p>No. We build intuitive systems. Upon delivery, <strong>we provide a basic training session</strong> for your team, showing you exactly how to update news, events, or photos without touching a single line of code.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question">Is our data and donor information secure? <i class="fas fa-plus"></i></button>
+                <div class="faq-answer">
+                    <p>Absolutely. We implement <strong>SSL Encryption</strong> and security firewalls as standard. For NGOs like SHO, we ensure payment portals are transnational and follow strict security protocols.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question">What happens if something goes wrong later? <i class="fas fa-plus"></i></button>
+                <div class="faq-answer">
+                    <p>Ottoo and our hand-picked collective of engineers provide <strong>long-term support</strong>. Depending on your package, we offer priority 24/7 technical assistance to ensure your mission never goes offline.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!--===================================================FAQ Section ends===================================================-->
+<!--=============================================Footer Section=============================================-->
+<footer class="main-footer">
+    <div class="container" style="align-items: center;">
+        <div class="footer-top-grid" style="padding-left: 10px;">
+            
+            <div class="footer-brand-area">
+                <div class="footer-logo">
+                    <img src="IMAGES/logo.png" alt="Namelevate Logo" class="f-logo-img">
+                    <h3>Name<span class="orange-text">levate</span>Technologies</h3>
+                </div>
+                <p class="footer-vision-statement">
+                    "To become the leading catalyst for digital transformation in Africa, engineering world-class infrastructure that empowers every NGO, school, and business to scale their impact."
+                </p>
+            </div>
+
+            <div class="footer-nav-area">
+                <h4>Quick Navigation</h4>
+                    <ul class="">
+                        <li><a href="#home" class="nav-links">Home</a></li>
+                        <li><a href="#services" class="nav-links">Services</a></li>
+                        <li><a href="#portfolio" class="nav-links">Portfolio</a></li>
+                        <li><a href="#pricing" class="nav-links">Pricing</a></li>
+                        <li><a href="#contact" class="nav-links">Contact</a></li>
+                    </ul>
+            </div>
+
+            <div class="footer-contact-area">
+                <h4>Get In Touch</h4>
+                <div class="footer-contact-info">
+                    <p><img src="IMAGES/phone.webp" alt="text or call" class="adv-card-img"></i> +256 772 260 710</p>
+                    <p><img src="IMAGES/whatsapp.png" alt="WhatsApp" class="adv-card-img"></i> +256 772 260 710</p>
+                    <p><img src="IMAGES/mail.png" alt="email" class="adv-card-img"></i> namelevate@gmail.com</p>
+                </div>
+                <div class="footer-socials">
+                    <a href="https://wa.me/256772260710?text=Hello%20Dr.%20O.M,%20I'm%20interested%20in%20elevating%20my%20organization's%20digital%20presence." target="_blank"><img src="IMAGES/whatsapp.png" alt="WhatsApp" class="adv-card-img"></a>
+                    <a href="https://www.linkedin.com/in/ottoo-marvin-511628360?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank"><img src="IMAGES/linkedin.png" alt="LinkedIn" class="adv-card-img"></a>
+                    <a href="https://x.com/ottoomarvin" target="_blank"><img src="IMAGES/xicon.webp" alt="X" class="adv-card-img"></a>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+    <div class="footer-bottom">
+            <div class="bottom-flex">
+                <p> &copy;2026 Namelevate Technologies. All Rights Reserved.</p>
+            </div>
+        </div>
+</footer>
+<!---------------------------------------------Footer Section ends--------------------------------------------->
+<!---------------------------------------------Sticky whatsapp--------------------------------------------->
+<a href="https://wa.me/256772260710?text=Hello%20Ottoo,%20I'm%20interested%20in%20elevating%20my%20organization's%20digital%20presence%20through%20Namelevate%20Technologies." 
+   class="whatsapp-float" 
+   target="_blank" 
+   rel="noopener noreferrer">
+    <img src="IMAGES/whatsapp.png" alt="Chat with Us" class="wa-img">
+    <span class="wa-tooltip">Chat with Us</span>
+</a>
+<!---------------------------------------------Sticky whatsapp ends--------------------------------------------->
+
+<script src="script.js"></script>
+</body>
+</html>
