@@ -125,7 +125,7 @@ function startAutoCycle() {
         } else {
             clearInterval(autoCycle);
         }
-    }, 3000);
+    }, 9000);
 }
 
 function showDetail(sector) {
