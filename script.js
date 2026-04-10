@@ -266,3 +266,35 @@ function openSolModal(key) {
 function closeSolModal() {
     document.getElementById('solDetailModal').style.display = "none";
 }
+
+// --- FAQ Section Logic ---
+function initFAQ() {
+    const faqButtons = document.querySelectorAll('.faq-question');
+    
+    if (faqButtons.length > 0) {
+        faqButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const faqItem = button.parentElement;
+                
+                // 1. Check if the item is already active
+                const isActive = faqItem.classList.contains('active');
+                
+                // 2. Close all other FAQ items for a clean "Accordion" effect
+                document.querySelectorAll('.faq-item').forEach(item => {
+                    item.classList.remove('active');
+                });
+                
+                // 3. If the clicked item wasn't active, open it
+                if (!isActive) {
+                    faqItem.classList.add('active');
+                }
+            });
+        });
+    }
+}
+
+// Add this to your DOMContentLoaded listener so it fires early
+document.addEventListener("DOMContentLoaded", function() {
+    // ... your other intersection observer code ...
+    initFAQ(); 
+});
