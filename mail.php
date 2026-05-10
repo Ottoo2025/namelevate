@@ -11,7 +11,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $message = isset($_POST["message"]) ? strip_tags(trim($_POST["message"])) : "No specific message provided (Package Selection Only).";
 
     // 3. Setup Recipient
-    $to = "namelevate@gmail.com";
+    $to = "namelevate.tech@gmail.com";
     
     // 4. Dynamic Subject Line
     if ($package !== "General Inquiry" && $package !== "None") {
@@ -40,7 +40,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         exit(); // Always use exit() after a header redirect
     } else {
         // Clinical error handling
-        echo "Transmission Error. Please contact Ottoo directly at namelevate@gmail.com";
+        echo "Transmission Error. Please contact Ottoo directly at namelevate.tech@gmail.com or WhatsApp +256 772260710. We apologize for the inconvenience.";
     }
 } else {
     // Prevent direct access to this script
@@ -48,51 +48,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     exit();
 }
 ?>
-
-<?php /*
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // 1. Sanitize all incoming data
-    $name = strip_tags(trim($_POST["fullname"]));
-    $email = filter_var(trim($_POST["email"]), FILTER_SANITIZE_EMAIL);
-    $phone = strip_tags(trim($_POST["phone"]));
-    $org = strip_tags(trim($_POST["org_type"]));
-    
-    // 2. Capture the Hidden Package Field
-    // If the 'package' field is empty, we label it as a 'General Inquiry'
-    $package = isset($_POST["package"]) ? strip_tags(trim($_POST["package"])) : "General Inquiry";
-    
-    // 3. Message (For the modal, this might be empty, so we provide a default)
-    $message = isset($_POST["message"]) ? strip_tags(trim($_POST["message"])) : "User selected a specific package via the pricing grid.";
-
-    // 4. Your Details
-    $recipient = "namelevate@gmail.com";
-    $subject = "Namelevate Order: $package from $name";
-
-    // 5. Build the Email Body (Clinical Style)
-    $email_content = "--- NEW PROJECT DIAGNOSIS ---\n\n";
-    $email_content .= "SELECTED PLAN: " . strtoupper($package) . "\n";
-    $email_content .= "-----------------------------\n";
-    $email_content .= "Client Name: $name\n";
-    $email_content .= "Email: $email\n";
-    $email_content .= "Phone: $phone\n";
-    $email_content .= "Organization: $org\n\n";
-    $email_content .= "Message/Notes:\n$message\n\n";
-    $email_content .= "--- End of Report ---";
-
-    // 6. Email Headers
-    $email_headers = "From: Namelevate System <$email>";
-
-    // 7. Send and Redirect
-    if (mail($recipient, $subject, $email_content, $email_headers)) {
-        // Redirect back to the pricing section with a success message
-        header("Location: index.php?status=success#pricing");
-    } else {
-        header("Location: index.php?status=error#pricing");
-    }
-} else {
-    header("Location: index.php");
-}
-?>  */
 
 
 
